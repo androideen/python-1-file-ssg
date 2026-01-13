@@ -1,6 +1,6 @@
-# Simple Static Site Generator (SSG)
+# Python 1-File SSG
 
-A lightweight, Python-based static site generator designed for simplicity and flexibility. It transforms plain HTML files with frontmatter and simple templating tags into a fully static website.
+A lightweight, 1-file Python-based static site generator designed for simplicity and flexibility. It transforms plain HTML files with frontmatter and simple templating tags into a fully static website.
 
 ## Features
 
