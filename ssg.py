@@ -70,7 +70,7 @@ class SSG:
         """
         Recursively replaces <template include="filename.html">
         """
-        pattern = r'<template\s+include=["\'](.*?)["\']\s*>'
+        pattern = r'<template\s+include=["\'](.*?)["\']\s*(?:/>|>(?:.*?</template>)?)'
         
         def replace_include(match):
             filename = match.group(1)
@@ -84,13 +84,13 @@ class SSG:
                 print(f"Warning: Include file not found: {filename}")
                 return "" # or keep tag?
         
-        return re.sub(pattern, replace_include, content)
+        return re.sub(pattern, replace_include, content, flags=re.DOTALL)
 
     def process_variables(self, content, variables):
         """
         Replaces <template variable="varname" default="val">
         """
-        pattern = r'<template\s+variable=["\'](.*?)["\'](?:\s+default=["\'](.*?)["\'])?\s*>'
+        pattern = r'<template\s+variable=["\'](.*?)["\'](?:\s+default=["\'](.*?)["\'])?\s*(?:/>|>(?:.*?</template>)?)'
         
         def replace_variable(match):
             var_name = match.group(1)
@@ -100,7 +100,7 @@ class SSG:
             val = variables.get(var_name, default_val)
             return str(val)
             
-        return re.sub(pattern, replace_variable, content)
+        return re.sub(pattern, replace_variable, content, flags=re.DOTALL)
 
     def build_page(self, file_path):
         """

@@ -89,7 +89,7 @@ layout: base.html
 Inject frontmatter variables into your content or layouts using the `<template variable="...">` tag.
 
 ```html
-<title><template variable="title" default="My Site"></title>
+<title><template variable="title" default="My Site"></template></title>
 ```
 
 ### Layouts
@@ -100,13 +100,12 @@ Define a layout file (e.g., `layouts/base.html`). To use it, specify `layout: ba
 <!DOCTYPE html>
 <html>
 <head>
-    <title><template variable="title"></title>
+    <title><template variable="title"></template></title>
 </head>
 <body>
     <nav>...</nav>
     <main>
-        <!-- Page content is injected here -->
-        <template variable="content">
+        <template variable="content"></template>
     </main>
     <footer>...</footer>
 </body>
@@ -117,7 +116,7 @@ Define a layout file (e.g., `layouts/base.html`). To use it, specify `layout: ba
 Include other HTML files (partials) from the `layouts` directory using the `<template include="...">` tag.
 
 ```html
-<template include="header.html">
+<template include="header.html"></template>
 ```
 
 ## License
