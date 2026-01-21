@@ -1,0 +1,60 @@
+---
+title: Welcome to Python 1-File SSG
+layout: content.html
+description: A lightweight, 1-file Python-based static site generator designed for simplicity and flexibility.
+---
+
+<p class="lead">A lightweight, 1-file Python-based static site generator designed for simplicity and flexibility.</p>
+
+<p>It transforms plain HTML files with frontmatter and simple templating tags into a fully static website. Whether
+    you're building a personal blog or a technical documentation site, this tool provides the essential features without
+    the bloat.</p>
+
+<div class="row mt-5">
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm border-0 bg-light">
+            <div class="card-body">
+                <h3 class="card-title h5 text-primary">Simple Templating</h3>
+                <p class="card-text">Use native HTML-like tags (<code>&lt;template variable="..."&gt;</code> and
+                    <code>&lt;template include="..."&gt;</code>) for includes and variables. No complex syntax to learn.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm border-0 bg-light">
+            <div class="card-body">
+                <h3 class="card-title h5 text-primary">Layout Inheritance</h3>
+                <p class="card-text">Define global layouts once and wrap your content files easily. Perfect for
+                    maintaining a consistent design across your site.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm border-0 bg-light">
+            <div class="card-body">
+                <h3 class="card-title h5 text-primary">YAML Frontmatter</h3>
+                <p class="card-text">Define metadata like titles, dates, and custom variables directly at the top of
+                    your HTML files using standard YAML syntax.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm border-0 bg-light">
+            <div class="card-body">
+                <h3 class="card-title h5 text-primary">Asset Management</h3>
+                <p class="card-text">All your CSS, JS, and images in the <code>assets/</code> folder are automatically
+                    handled and copied to the build directory.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-5 p-4 border rounded bg-dark text-light">
+    <h3 class="h5 mb-3">Quick Start Requirements</h3>
+    <p>Python 3.6+ is all you need. For advanced frontmatter and watch mode, install these optional packages:</p>
+    <code class="text-info">pip install PyYAML watchdog</code>
+</div>

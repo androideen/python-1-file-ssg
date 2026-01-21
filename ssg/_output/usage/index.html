@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>Usage | Python SSG</title>
+    <meta name='description' content='Learn how to use the Python 1-File Static Site Generator.' />
+
+    <script defer src="/assets/js/alpine.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css?v=20260120">`
+    
+</head>
+
+<body data-bs-theme="light">
+    <div id="app">
+<header>
+    <nav id="siteNav" class="navbar navbar-expand-md border-bottom">
+        <div class="container-xxl">
+            <a class="navbar-brand" href="/">Python SSG</a>
+            <button class="navbar-toggler btn-primary text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FFFFFF" class="bi bi-list"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item me-2">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link" href="/usage/">Usage</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="py-3 min-vh-100">
+    <div class="container-xxl my-2 bg p-10" id="main-wrapper">
+        <h1 class="my-5">Usage</h1>
+        <div class="mb-5">
+    <h2>Site Project Structure</h2>
+    <p>Each site directory (like <code>ssg/</code> or <code>demo-site/</code>) follows this standard layout:</p>
+    <div class="bg-light p-3 border rounded">
+        <pre class="mb-0"><code>my-website/
+├── content/      # Page content (HTML files with frontmatter)
+├── layouts/      # Layout templates and reusable partials
+├── assets/       # Static assets (CSS, JS, Images) -> copied to /assets
+├── extra/        # Files copied directly to root (robots.txt, favicon, etc.)
+└── _output/      # The generated static site (automatically created)</code></pre>
+    </div>
+</div>
+
+<div class="mb-5">
+    <h2>Usage</h2>
+    <p>Run the generator by pointing it to your site directory and choosing a command.</p>
+
+    <h3>Commands</h3>
+
+    <div class="mt-4">
+        <h4>build</h4>
+        <p>Compiles the site once.</p>
+        <pre class="bg-dark text-white p-3 rounded"><code>python ssg.py ./ssg build</code></pre>
+    </div>
+
+    <div class="mt-4">
+        <h4>serve</h4>
+        <p>Builds and starts a local server at <code>http://localhost:3000</code>.</p>
+        <pre class="bg-dark text-white p-3 rounded"><code>python ssg.py ./ssg serve</code></pre>
+    </div>
+
+    <div class="mt-4">
+        <h4>watch</h4>
+        <p>Monitors for changes, rebuilds automatically, and runs the server.</p>
+        <pre class="bg-dark text-white p-3 rounded"><code>python ssg.py ./ssg watch</code></pre>
+    </div>
+</div>
+
+<div class="mb-5">
+    <h2>Templating System</h2>
+
+    <div class="card my-3">
+        <div class="card-body">
+            <h5 class="card-title">Frontmatter</h5>
+            <p>Add metadata to your HTML files using YAML syntax:</p>
+            <pre class="bg-light p-2 rounded"><code>---
+title: Getting Started
+layout: content.html
+---
+&lt;h1&gt;Hello SSG&lt;/h1&gt;</code></pre>
+        </div>
+    </div>
+
+    <div class="card my-3">
+        <div class="card-body">
+            <h5 class="card-title">Variables</h5>
+            <p>Inject frontmatter values or the special <code>content</code> variable:</p>
+            <pre class="bg-light p-2 rounded"><code>&lt;title&gt;&lt;template variable="title" default="My Site"&gt;&lt;/template&gt;&lt;/title&gt;
+&lt;main&gt;&lt;template variable="content"&gt;&lt;/template&gt;&lt;/main&gt;</code></pre>
+        </div>
+    </div>
+
+    <div class="card my-3">
+        <div class="card-body">
+            <h5 class="card-title">Includes</h5>
+            <p>Include partials from the <code>layouts/</code> directory:</p>
+            <pre class="bg-light p-2 rounded"><code>&lt;template include="header.html"&gt;&lt;/template&gt;</code></pre>
+        </div>
+    </div>
+</div>
+    </div>
+</main>
+</div>
+
+<footer class="container text-center mt-4 p-4">
+    <p>&copy; 2024 - <span id="current-year"></span>. All rights reserved.</p>
+</footer>
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/js/script.js"></script>
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>Welcome to Python 1-File SSG | Python SSG</title>
+    <meta name='description' content='A lightweight, 1-file Python-based static site generator designed for simplicity and flexibility.' />
+
+    <script defer src="/assets/js/alpine.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css?v=20260120">`
+    
+</head>
+
+<body data-bs-theme="light">
+    <div id="app">
+<header>
+    <nav id="siteNav" class="navbar navbar-expand-md border-bottom">
+        <div class="container-xxl">
+            <a class="navbar-brand" href="/">Python SSG</a>
+            <button class="navbar-toggler btn-primary text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FFFFFF" class="bi bi-list"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item me-2">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link" href="/usage/">Usage</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="py-3 min-vh-100">
+    <div class="container-xxl my-2 bg p-10" id="main-wrapper">
+        <h1 class="my-5">Welcome to Python 1-File SSG</h1>
+        <p class="lead">A lightweight, 1-file Python-based static site generator designed for simplicity and flexibility.</p>
+
+<p>It transforms plain HTML files with frontmatter and simple templating tags into a fully static website. Whether
+    you're building a personal blog or a technical documentation site, this tool provides the essential features without
+    the bloat.</p>
+
+<div class="row mt-5">
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm border-0 bg-light">
+            <div class="card-body">
+                <h3 class="card-title h5 text-primary">Simple Templating</h3>
+                <p class="card-text">Use native HTML-like tags (<code>&lt;template variable="..."&gt;</code> and
+                    <code>&lt;template include="..."&gt;</code>) for includes and variables. No complex syntax to learn.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm border-0 bg-light">
+            <div class="card-body">
+                <h3 class="card-title h5 text-primary">Layout Inheritance</h3>
+                <p class="card-text">Define global layouts once and wrap your content files easily. Perfect for
+                    maintaining a consistent design across your site.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm border-0 bg-light">
+            <div class="card-body">
+                <h3 class="card-title h5 text-primary">YAML Frontmatter</h3>
+                <p class="card-text">Define metadata like titles, dates, and custom variables directly at the top of
+                    your HTML files using standard YAML syntax.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm border-0 bg-light">
+            <div class="card-body">
+                <h3 class="card-title h5 text-primary">Asset Management</h3>
+                <p class="card-text">All your CSS, JS, and images in the <code>assets/</code> folder are automatically
+                    handled and copied to the build directory.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-5 p-4 border rounded bg-dark text-light">
+    <h3 class="h5 mb-3">Quick Start Requirements</h3>
+    <p>Python 3.6+ is all you need. For advanced frontmatter and watch mode, install these optional packages:</p>
+    <code class="text-info">pip install PyYAML watchdog</code>
+</div>
+    </div>
+</main>
+</div>
+
+<footer class="container text-center mt-4 p-4">
+    <p>&copy; 2024 - <span id="current-year"></span>. All rights reserved.</p>
+</footer>
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/js/script.js"></script>
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+</body>
+
+</html>

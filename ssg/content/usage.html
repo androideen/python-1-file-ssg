@@ -1,0 +1,76 @@
+---
+title: Usage
+layout: content.html
+description: Learn how to use the Python 1-File Static Site Generator.
+---
+
+<div class="mb-5">
+    <h2>Site Project Structure</h2>
+    <p>Each site directory (like <code>ssg/</code> or <code>demo-site/</code>) follows this standard layout:</p>
+    <div class="bg-light p-3 border rounded">
+        <pre class="mb-0"><code>my-website/
+├── content/      # Page content (HTML files with frontmatter)
+├── layouts/      # Layout templates and reusable partials
+├── assets/       # Static assets (CSS, JS, Images) -> copied to /assets
+├── extra/        # Files copied directly to root (robots.txt, favicon, etc.)
+└── _output/      # The generated static site (automatically created)</code></pre>
+    </div>
+</div>
+
+<div class="mb-5">
+    <h2>Usage</h2>
+    <p>Run the generator by pointing it to your site directory and choosing a command.</p>
+
+    <h3>Commands</h3>
+
+    <div class="mt-4">
+        <h4>build</h4>
+        <p>Compiles the site once.</p>
+        <pre class="bg-dark text-white p-3 rounded"><code>python ssg.py ./ssg build</code></pre>
+    </div>
+
+    <div class="mt-4">
+        <h4>serve</h4>
+        <p>Builds and starts a local server at <code>http://localhost:3000</code>.</p>
+        <pre class="bg-dark text-white p-3 rounded"><code>python ssg.py ./ssg serve</code></pre>
+    </div>
+
+    <div class="mt-4">
+        <h4>watch</h4>
+        <p>Monitors for changes, rebuilds automatically, and runs the server.</p>
+        <pre class="bg-dark text-white p-3 rounded"><code>python ssg.py ./ssg watch</code></pre>
+    </div>
+</div>
+
+<div class="mb-5">
+    <h2>Templating System</h2>
+
+    <div class="card my-3">
+        <div class="card-body">
+            <h5 class="card-title">Frontmatter</h5>
+            <p>Add metadata to your HTML files using YAML syntax:</p>
+            <pre class="bg-light p-2 rounded"><code>---
+title: Getting Started
+layout: content.html
+---
+&lt;h1&gt;Hello SSG&lt;/h1&gt;</code></pre>
+        </div>
+    </div>
+
+    <div class="card my-3">
+        <div class="card-body">
+            <h5 class="card-title">Variables</h5>
+            <p>Inject frontmatter values or the special <code>content</code> variable:</p>
+            <pre class="bg-light p-2 rounded"><code>&lt;title&gt;&lt;template variable="title" default="My Site"&gt;&lt;/template&gt;&lt;/title&gt;
+&lt;main&gt;&lt;template variable="content"&gt;&lt;/template&gt;&lt;/main&gt;</code></pre>
+        </div>
+    </div>
+
+    <div class="card my-3">
+        <div class="card-body">
+            <h5 class="card-title">Includes</h5>
+            <p>Include partials from the <code>layouts/</code> directory:</p>
+            <pre class="bg-light p-2 rounded"><code>&lt;template include="header.html"&gt;&lt;/template&gt;</code></pre>
+        </div>
+    </div>
+</div>
